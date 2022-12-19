@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from .views import HomeView
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+
+    # Aquí se le indica a Django que cuando se haga una petición al servidor, se va a
+    # ejecutar la función HomeView.as_view(), que es la que se encarga de manejar las
+    # peticiones HTTP que llegan al servidor y devolver una respuesta HTTP.
+    # Escribimos homeview.as_view() porque es una clase, y para que se ejecute como una
+    # función, se le agrega el .as_view()
+
+    path("",HomeView.as_view(), name="home")
 ]
