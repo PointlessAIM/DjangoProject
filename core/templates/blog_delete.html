@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+Seguro?
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+{%endblock content%}
